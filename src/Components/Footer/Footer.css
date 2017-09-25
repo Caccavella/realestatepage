@@ -1,0 +1,31 @@
+.footercontainer {
+    position: absolute;
+    bottom: 0;
+    background: #2D2B2B;
+    width: 100%;
+    height: 120px;
+    color: whitesmoke;
+}
+
+.login {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.loginlink {
+    text-decoration: none;
+    color: #2D2B2B;
+    height: 20px;
+    width: 60px;
+    padding: 5px 5px 5px 5px;
+}
+
+.loginlink:hover {
+    background: #4F9BCC;
+    opacity: .9;
+    transform: scale(1.1);
+    color: white;
+}

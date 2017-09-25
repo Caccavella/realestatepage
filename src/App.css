@@ -44,17 +44,18 @@
 }
 
 .navigation ul {
-  opacity: .9;
-  color: black;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-content: center;
-  height: 100%;
+
 }
 
-.navigation li {
+.navigation li:hover {
+  background: navy;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.navlink {
+  text-decoration: none;
   border-right: 1px solid #ECD0A4;
   padding: 20px 20px 0px 20px;  
   align-content: center;
@@ -62,10 +63,19 @@
   align-items: center;
 }
 
-.navigation li:hover {
+.navitems {
+  opacity: .9;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  height: 100%;
+}
+
+.navlink:hover {
   background: navy;
   color: white;
-  border-radius: 3px;
 
 }
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../../Equity_Real_Estate_logo.png';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../App.css';
-import Aboutpage from '../Aboutpage';
-import Home from '../Home';
-import Properties from '../Properties/Properties';
+// import Aboutpage from '../Aboutpage';
+// import Home from '../Home/Home';
+// import Properties from '../Properties/Properties';
+// import Contact from '../Contact/Contact';
 
 export default class Header extends Component {
 
@@ -18,12 +19,12 @@ export default class Header extends Component {
                     <h1>Lisa Caccavella</h1>
                 </div>
                 <div className="navigation">
-                    <ul>
-                        <li><Link to='/'component={Home}>Home</Link></li>
-                        <li><Link to='/properties' component={Properties}>Properties</Link></li>
-                        <li><Link to='/about' component={Aboutpage}>About</Link></li>
-                        <li><Link to='/contact'>Contact</Link></li>
-                    </ul>
+                    <div className="navitems">
+                        <Link to='/'  className="navlink">Home</Link>
+                        <Link to='/properties' className="navlink">Properties</Link>
+                        <Link to='/about'  className="navlink">About</Link>
+                        <Link to='/contact'  className="navlink">Contact</Link>
+                    </div>
                 </div>
             </div>
         )
