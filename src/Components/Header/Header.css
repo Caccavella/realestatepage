@@ -1,0 +1,138 @@
+.header {
+    background-color: #FFF;
+    height: 50px;
+    width: 100vw;
+    padding-top: 20px;
+    margin-top: 40px;    
+    color: #282FE3;
+    opacity: .7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+ .header img {
+     transform: scale(.7) translateX(-25%);
+     padding-bottom: 18px;
+     width: 50vw;
+ } 
+
+  .title {
+    opacity: .9;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+  }
+  
+
+  .title img {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    width: 60px;
+    height: 40px;
+    border-radius: 1px;
+    /* background: #2aabe2; */
+    z-index: 1;
+    padding-right: 20px;
+    display: none;
+  }
+
+  .navigation {
+    /* width: 0;
+    top:0;
+    position: fixed;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 55px; */
+    position: relative;
+    transition: 0.5s;
+    background: lightgrey;
+    opacity: .99;
+    z-index: 4;
+    margin-top: 182px;
+  }
+
+  .navigation {
+  }
+
+  .navigation li:hover {
+    background: navy;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  
+  .navlink {
+    position: relative;
+    text-decoration: none;
+    /* border-right: 1px solid #ECD0A4; */
+    padding: 20px 30px 20px 20px;  
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+  
+  .navitems {
+    opacity: .9;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+  }
+  
+  .navlink:hover {
+    background: navy;
+    color: white;
+  
+  }
+ 
+
+  @media(min-width: 320px) {
+    .header {
+        background-color: #FFF;
+        height: 70px;
+        width: 100vw;
+        padding-top: 20px;
+        margin-top: 40px;
+        margin-left: 0;
+        color: #282FE3;
+        opacity: .7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header img {
+        padding-left: 40px;
+        max-height: 70px;
+        min-height: 40px;
+        min-width: 200px;
+    }
+  }
+
+
+  @media(min-width: 840px) {
+    .navitems {
+        flex-direction: row;
+    }
+    .navigation {
+      min-width: 500px;
+      margin-top: 0px;
+      background: white;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+  

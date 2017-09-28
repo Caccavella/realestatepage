@@ -1,0 +1,58 @@
+.adminpage {
+    background: radial-gradient(circle at 50% -46%, #8DD7EC, #05909B);
+    /* display: flex; */
+    align-content: center;
+    height: 100vh;
+    background-repeat: repeat;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.commentdisplay {
+    background: lightgrey;
+    height: 250px;
+    width: 50%;
+    align-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    
+}
+.datacontainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.logoutcontainer {
+    margin-left: 75%;
+    padding-top: 20px;
+}
+
+.logoutbutton {
+    color: whitesmoke;
+    font-weight: bold;
+    height: 25px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.archivebutton {
+    color: white;
+    border-radius: 5px;
+    background-image: radial-gradient(circle at 50% -46%, #8DD7EC, #05909B);
+    box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);
+    padding: 2px 4px 2px 4px;
+}
+
+.archivebutton:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+}

@@ -1,5 +1,19 @@
+.properties {
+    text-align: center;
+    background-image: url('../../new-home-2419999_1920.jpg');
+    background-size: 100%;
+    display: flex;
+    height: 100vh;   
+    width: 100vw;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .iframe {
-    margin-left: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
     margin-bottom: 20px;
     border: 1px solid #4B443C;
     box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);
