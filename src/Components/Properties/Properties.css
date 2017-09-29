@@ -8,6 +8,8 @@
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: move 150s ease-in-out infinite alternate;
+    
 }
 
 
@@ -18,3 +20,14 @@
     border: 1px solid #4B443C;
     box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);
 }
+
+@keyframes move {
+    0% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    19% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    20% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    39% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    40% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    79% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    80% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    99% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    100% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}}

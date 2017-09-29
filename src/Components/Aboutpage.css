@@ -1,7 +1,7 @@
 .aboutwrapper {
     position: relative;
     text-align: center;
-    background-image: url('../new-home-2419999_1920.jpg');
+    /* background-image: url('../new-home-2419999_1920.jpg'); */
     background-size: 100%;
     display: flex;
     height: 100vh;   
@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 4;
+    animation: move 150s ease-in-out infinite alternate;    
 }
 .headersquare {
     position: relative;
@@ -18,9 +19,9 @@
 
 .aboutinfo {
     position: relative;
-    background: white;
+    background: rgba(255, 255, 255, .9);
     z-index: 4;
-    opacity: .9;
+    /* opacity: .9; */
     margin-top: 30px;
     font-size: 11px;
     padding-bottom: 10px;
@@ -36,11 +37,12 @@
 .headshotcontainer  {
     position: absolute;
     justify-content: flex-start;
-    /* margin-left: .01%; */
-    z-index: 3;
+    margin-left: 40px;
+    z-index: 6;
     opacity: 1;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
+        
 }
 /*.headshotcontainer img {
     padding-bottom: 50px
@@ -86,6 +88,25 @@
     }
     .details {
         padding-top: 20px;
-        
     }
 }
+
+@media(min-width: 1180px) {
+    .headshotcontainer {
+        transform: translateY(-50px);
+        background-size: cover;
+        background-image: url('../21753456_10210507679396005_5109846194302538913_o.jpg');
+        opacity: 1;        
+    }
+}
+
+@keyframes move {
+    0% {background: url('../home2.jpg') no-repeat center center fixed;}
+    19% {background: url('../home2.jpg') no-repeat center center fixed;}
+    20% {background: url('../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    39% {background: url('../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    40% {background: url('../newhome3.jpg') no-repeat center center fixed;}
+    79% {background: url('../newhome3.jpg') no-repeat center center fixed;}
+    80% {background: url('../home2.jpg') no-repeat center center fixed;}
+    99% {background: url('../home2.jpg') no-repeat center center fixed;}
+    100% {background: url('../new-home-2419999_1920.jpg') no-repeat center center fixed;}}

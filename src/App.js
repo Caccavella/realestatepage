@@ -18,7 +18,7 @@ class App extends Component {
           <Route path='/testimonials' component={Testimonials} />
           <Route path='/properties' component={Properties} />
           <Route path='/contact' component={Contact} />
-          <Route exact path={process.env.ROUTE_SECRET_PATH} component={Admin} />
+          <Route exact path={process.env.REACT_APP_SECRET_PATH} component={Admin} />
         </Switch>
       </div>
     );

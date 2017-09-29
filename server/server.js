@@ -35,13 +35,14 @@ passport.use(new Auth0Strategy({
     db.find_user(profile.id).then(user => {
         if (!user[0] && profile.id === process.env.auth0authorized1) {
             db.create_user([profile.displayName, profile.id]).then((user) => {
-                return done(null, user)})
-        } else if(user && profile.id === process.env.auth0authorized1) {
-                    console.log('Found User',user)
-                    return done(null, user[0]);
+                return done(null, user[0])
+            })
+        } else if (user && profile.id === process.env.auth0authorized1) {
+            console.log('Found User', user)
+            return done(null, user[0]);
         } else {
-            alert('How did you get here? You are not an admin, please contact the website owner.')
-            return res.redirect(302, 'http://localhost:3000/#/');
+            // alert('How did you get here? You are not an admin, please contact the website owner.')
+            return done(null, user[0]);
         }
     })
 }))
@@ -52,7 +53,7 @@ passport.serializeUser(function (user, done) {
 })
 //USER COMES FROM SESSION - INVOKED ON EVERY ENDPOINT.
 passport.deserializeUser(function (user, done) {
-    console.log('deserial',user);
+    console.log('deserial', user);
     // app.get('db').find_session_user(user[0].id).then(user => {
     //     return done(null, user[0]);
     // })
@@ -63,28 +64,26 @@ app.get('/login/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/admin/',
     failureRedirect: 'http://localhost:3000/#/'
 }))
-// app.get('/auth/me', (req, res) => {
-//     if (!req.user) {
-//         return res.status(404).send('User not found')
-//     } else {
-//         return res.status(200).send(req.user);
-//     }
-// })
+
 app.get('/auth/logout', (req, res) => {
-    req.logOut().then(response => {
-    return res.redirect(302, 'http://localhost:3000/#/');
-})
+    req.logOut()
+    return res.redirect(302, 'http:localhost:3000/#/');
 })
 
 app.post('/email', (req, res) => {
-    app.get('db').create_emails([req.body.contactName, req.body.contactEmail, req.body.contactPhone, req.body.contactReason, req.body.contactMessage ])
-    .then((response) => {
+    app.get('db').create_emails([req.body.contactName, req.body.contactEmail, req.body.contactPhone, req.body.contactReason, req.body.contactMessage])
+        .then((response) => {
+            return res.send(response);
+        })
+})
+
+app.get('/email', (req, res) => {
+    app.get('db').getEmails().then(response => {
         return res.send(response);
     })
 })
-
-app.get('/email', (req,res) => {
-    app.get('db').getEmails().then(response => {
+app.get('/testimonials', (req, res) => {
+    app.get('db').get_testimonials().then(response => {
         return res.send(response);
     })
 })
@@ -94,6 +93,21 @@ app.get('/email/archive/:id', (req, res) => {
     app.get('db').archive_emails(req.params.id).then(response => {
         return res.send(response);
     })
+})
+
+app.get('/email/testimonial/:id', (req, res) => {
+    console.log(req.params.id)
+    app.get('db').add_testimonial(req.params.id).then(response => {        
+        return res.send(response);
+    })
+})
+
+app.get('/auth/authorized', (req, res) => {
+    if (!req.user) {
+        return res.status(403).send(false)
+    } else {
+        return res.status(200).send(req.user);
+    }
 })
 
 let port = 3034;

@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
+    animation: move 150s ease-in-out infinite alternate;
 }
 
 .contactinfo {
@@ -62,3 +63,14 @@ textarea {
         max-width: 600px;
     }
 }
+
+@keyframes move {
+    0% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    19% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    20% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    39% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    40% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    79% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    80% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    99% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    100% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}}

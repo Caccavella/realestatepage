@@ -11,6 +11,8 @@ export default class Admin extends Component {
             emails: []
         }
         this.archiveEmail = this.archiveEmail.bind(this);
+        this.createTestimonial = this.createTestimonial.bind(this);
+        // this.archiveAndTestimonial = this.archiveAndTestimonial.bind(this);
     }
     componentDidMount() {
         axios.get('/email').then(res => {
@@ -19,8 +21,16 @@ export default class Admin extends Component {
             })
             console.log(this.state.emails)
         })
-    }
+        axios.get('/auth/authorized').then(user => {
+            if(!user) {
+                this.props.history.push('/')
+            } else {
+                
+            }
 
+        })
+    }
+    
     archiveEmail(eid) {
         axios.get('/email/archive/' + eid).then(res => {
             axios.get('/email').then((res) => {
@@ -31,6 +41,22 @@ export default class Admin extends Component {
         })
     }
 
+    createTestimonial(eid) {
+        console.log(eid)
+        axios.get('/email/testimonial/' + eid).then(res => {
+            axios.get('/email').then((res) => {
+                this.setState({
+                    emails: res.data
+                })
+            })
+        })
+    }
+    
+    
+    archiveAndTestimonial(x) {
+        this.archiveEmail(x)
+        this.createTestimonial(x)
+    }
 
     render() {
         var data = this.state.emails.map((e, i) => {
@@ -38,6 +64,9 @@ export default class Admin extends Component {
                 <div className="commentdisplay" key={i}>
                     <div className="datacontainer">
                         <button className="archivebutton" onClick={() => this.archiveEmail(e.emailid)}>Archive</button>
+                    </div>
+                    <div className="datacontainer">
+                        <button className="testimonialbutton"onClick={() => {this.archiveAndTestimonial(e.emailid)}}>Set As Testimonial</button>
                     </div>
                     <div className="datacontainer">
                         <span>Name: {e.clientname}</span>

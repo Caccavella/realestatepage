@@ -8,6 +8,7 @@
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: move 150s ease-in-out infinite alternate;
 }
 
 h2 {
@@ -34,6 +35,7 @@ h2 {
     transform: translateX(-50%);
     position: relative;
     z-index: 2;
+    box-shadow: 3px 3px 3px 3px rgba(56, 55, 55, 0.90);
 }
 
 .testimonialdisplay p {
@@ -47,3 +49,13 @@ h2 {
     padding-bottom: 20px;
     border-bottom: 1px solid black;
 }
+@keyframes move {
+    0% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    19% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    20% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    39% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}
+    40% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    79% {background: url('../../newhome3.jpg') no-repeat center center fixed;}
+    80% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    99% {background: url('../../home2.jpg') no-repeat center center fixed;}
+    100% {background: url('../../new-home-2419999_1920.jpg') no-repeat center center fixed;}}
