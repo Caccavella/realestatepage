@@ -24,7 +24,7 @@ export default class Testimonials extends Component {
 
         var newData = this.state.testimonials.map((e,i) => {
             return (
-                <div className="testimonialbox">
+                <div className="testimonialbox" key={i}>
                     <p >{e.clientname}:</p>
                     <p className="individualtestimonial">"{e.clientmessage}"</p>
                 </div>

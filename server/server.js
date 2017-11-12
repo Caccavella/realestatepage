@@ -8,6 +8,8 @@ const express = require('express'),
     massive = require('massive'),
     session = require('express-session');
 const app = express()
+
+app.use(express.static(`${__dirname}/../build`));
 //MIDDLEWARE
 app.use(session({
     secret: process.env.SECRET,
@@ -61,13 +63,13 @@ passport.deserializeUser(function (user, done) {
 })
 app.get('/login', passport.authenticate('auth0'));
 app.get('/login/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/admin/',
-    failureRedirect: 'http://localhost:3000/#/'
+    successRedirect: process.env.SUCCESS,
+    failureRedirect: process.env.FAILURE
 }))
 
 app.get('/auth/logout', (req, res) => {
     req.logOut()
-    return res.redirect(302, 'http:localhost:3000/#/');
+    return res.redirect(302, '/');
 })
 
 app.post('/email', (req, res) => {
